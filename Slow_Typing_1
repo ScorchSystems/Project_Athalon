@@ -1,0 +1,39 @@
+import time
+import sys
+
+
+def ps(str):
+    if IS_TESTING:
+        sys.stdout.write(str)
+    else:
+        if len(str) > 0:
+            for letter in str:
+                sys.stdout.write(letter)
+                sys.stdout.flush()
+                time.sleep(0.02)
+    return """
+    """
+
+
+def psi(str, int):
+    if IS_TESTING:
+        sys.stdout.write(str)
+        sys.stdout.write(int)
+    else:
+        for letter in str:
+            sys.stdout.write(letter)
+            sys.stdout.flush()
+            time.sleep(0.02)
+        for letter in int:
+            sys.stdout.write(letter)
+            sys.stdout.flush()
+            time.sleep(0.02)
+    return """
+    """
+
+
+IS_TESTING = input("1 or 2: ")
+if IS_TESTING == 1:
+    IS_TESTING = True
+else:
+    IS_TESTING = False
